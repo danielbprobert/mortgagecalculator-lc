@@ -181,10 +181,10 @@
             "sourcePath": "c:\\developer\\sfdx\\mortgagecalculator\\force-app\\main\\default\\aura\\Calculator\\CalculatorHelper.js",
             "isDirectory": false,
             "isMetadataFile": false,
-            "size": 1960,
-            "modifiedTime": 1547933459937,
-            "changeTime": 1547933459937,
-            "contentHash": "e71e0565872962cc5a4f955c617635960ad40cf9"
+            "size": 1861,
+            "modifiedTime": 1547933262806,
+            "changeTime": 1547933262806,
+            "contentHash": "fb20c214a9c2de5776ce7ccc0fe7ab585ce12b06"
         }
     ],
     [

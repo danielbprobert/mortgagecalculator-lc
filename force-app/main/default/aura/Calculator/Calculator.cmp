@@ -1,0 +1,75 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+
+    <!-- component attributes -->
+    <aura:attribute name="apr"
+                    type="decimal"
+                    description="decimal for storing the apr rate in"
+                    default="4.5"
+                    access="global"/>
+
+    <aura:attribute name="term"
+                    type="integer"
+                    description="integer for storing the number of years the mortgage is over"
+                    default="30"
+                    access="global"/>
+    
+    <aura:attribute name="amount"
+                    type="decimal"
+                    description="decimal for storing the required mortgage amount in"
+                    default="100000.00"
+                    access="global"/>
+    
+    <aura:attribute name="monthlyrepaymentvalue"
+                    type="decimal"
+                    description="decimal value for storing the monthly repayment value in including interest"
+                    default="506.69" 
+                    access="global"/>
+    
+    <aura:attribute name="repaymentexcludedinterest"
+                    type="decimal"
+                    description="decimal value for storing the monthly repayment value excluding interest"
+                    default="506.69" 
+                    access="global"/>
+    
+    <aura:attribute name="repaymentinterest"
+                    type="decimal"
+                    description="decimal value for storing the monthly interest amount"
+                    default="506.69" 
+                    access="global"/>
+
+    
+    <!-- lightning card to hold our calculator in-->
+    <lightning:card title="Mortgage Calculator Demo">
+        <p class="slds-p-horizontal_small">
+            <!-- define amount being borrowed -->
+            <lightning:input type="number" name="borrowamount" label="Enter a borrowing amount:" value="{!v.amount}" formatter="currency" step="0.01" onchange="{!c.borrowingchange}" /><br/>
+            <!-- define term of mortgage -->
+            <lightning:slider name="terminput" label="Term (Years)" value="{!v.term}" min="5" max="40" onchange="{!c.termchange}" /> <br/>
+            <!-- define interest rate applied to mortgage -->
+            <lightning:slider name="aprinput" label="Interest Rate (%)" step="0.1" value="{!v.apr}" min="0" max="20" onchange="{!c.aprchange}" /> <br/>
+            <!-- check to see if we should display the monthly repayments value -->
+            <!-- the monthly repayment value including interest -->   
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="text-input-id-1">Monthly Repayment Estimate (with interest)</label>
+                <div class="slds-form-element__control">
+                    <lightning:formattedNumber title="Monthly Repayment Estimate" value="{!v.monthlyrepaymentvalue}" style="currency" currencyCode="GBP" minimumFractionDigits="2" maximumFractionDigits="2"/>
+                </div>
+            </div>
+            <!-- the monthly repayment value excluding interest -->   
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="text-input-id-1">Monthly Repayment Estimate (excluding interest)</label>
+                <div class="slds-form-element__control">
+                    <lightning:formattedNumber title="Monthly Repayment Estimate" value="{!v.repaymentexcludedinterest}" style="currency" currencyCode="GBP" minimumFractionDigits="2" maximumFractionDigits="2"/>
+                </div>
+            </div>
+            <!-- the monthly repayment value interest amount -->   
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="text-input-id-1">Monthly Repayment Estimate (interest)</label>
+                <div class="slds-form-element__control">
+                    <lightning:formattedNumber title="Monthly Repayment Estimate" value="{!v.repaymentinterest}" style="currency" currencyCode="GBP" minimumFractionDigits="2" maximumFractionDigits="2"/>
+                </div>
+            </div>
+            
+        </p>
+    </lightning:card>
+</aura:component>
