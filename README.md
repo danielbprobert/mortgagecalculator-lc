@@ -4,7 +4,7 @@ This is a very simple lightning component that I was using as a way of expanding
 
 ## In Action
 
-Short video of the componet running (really short): https://drive.google.com/file/d/1gSrJVDW5B4aBaSPSgx1yH1F7nS_R3zrj/view
+Short video of the componet running (really short): https://drive.google.com/file/d/1gSrJVDW5B4aBaSPSgx1yH1F7nS_R3zrj/view?usp=sharing
 
 ## Comments
 
